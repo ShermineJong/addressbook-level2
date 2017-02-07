@@ -69,18 +69,26 @@ public interface ReadOnlyPerson {
         final StringBuilder builder = new StringBuilder();
         builder.append(getName());
         if (!getPhone().isPrivate()) {
-            builder.append(" Phone: ").append(getPhone());
+            builder.append(getPrintableString(getPhone()));
         }
         if (!getEmail().isPrivate()) {
-            builder.append(" Email: ").append(getEmail());
+            builder.append(getPrintableString(getPhone()));
         }
         if (!getAddress().isPrivate()) {
-            builder.append(" Address: ").append(getAddress());
+            builder.append(getPrintableString(getPhone()));
         }
         builder.append(" Tags: ");
         for (Tag tag : getTags()) {
             builder.append(tag);
         }
         return builder.toString();
+    }
+    
+    static String getPrintableString(Printable... printables){
+    	String printDetails = "";
+    	for (Printable p : printables){
+    		printDetails += p.getPrintableString();
+    	}
+    	return printDetails;
     }
 }
