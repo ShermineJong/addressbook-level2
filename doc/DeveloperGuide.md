@@ -51,3 +51,26 @@
 * Problem: Test fails during the very first time.<br>
   Solution: The output of the very first test run could be slightly different because the program
   creates a new storage file. Tests should pass from the 2nd run onwards.
+
+### User Story
+
+* As a student, I can add the function of adding and editing the tags to a contact, so that the user can create and add tags to a existing contact.
+* As a Student, I could add the function of editing the existing contact.
+
+### Use Case
+
+SoftWare System: AddressBook-Level2
+Use Case: rename existing tag
+Actors: User
+MSS:
+    1.User enter the command of EditingTag, contact Name ,ExistingTage and the renamed Tag
+    2.System echo the command
+    3.display success message
+Extension:
+    2a.System detect an error in the command given
+        2a1.System echo the command
+        2a2.System display an error message
+
+### NFR
+
+* The user prefer typing commands to the system.
